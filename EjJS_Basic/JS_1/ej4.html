@@ -7,8 +7,28 @@
 </head>
 <body>
     <script>
-        const cadena = prompt("Escribe una cadena de texto");
-         
+        let cadena = prompt("Escribe una cadena de texto");
+        cadena = cadena.trim();
+        
+        for(i = 0; i < cadena.length; i++ ){
+            if (cadena.charAt(i) ==  " " && cadena.charAt(i ) ==  " "){
+                 
+            }
+        }
+        
+        let palabras = cadena.split(" ");
+        document.write(palabras.length  + "<br>");
+        allArray(palabras);
+
+        
+
+        function allArray(a) {
+            document.write("[");
+            for(i = 0; i < a.length - 1; i++ ){
+                document.write(a[i] + ",");
+            }
+            document.write( a[a.length - 1] + "]" + "<br>");
+        }
     </script>
 </body>
 </html>
