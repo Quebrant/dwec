@@ -7,36 +7,34 @@
 </head>
 <body>
     <script>
-        let cadena = prompt("Escribe una cadena de texto");
-        cadena = cadena.trim();
-
-        /* 
-        for(i = 0; i < cadena.length; i++ ){
-            if ((cadena.charAt(i) ==  " ") && (cadena.charAt(i + 1) ==  " ")){
-                cadena = cadena.replace(" ","");
-                i--;
-            }
-        }
-         */
-
-
-        let palabras = cadena.split(" ");
-        for(i = 0; i < palabras.length; i++){
-            palabras[i] = palabras[i].trim();
-            if(palabras[i] == ""){
-                palabras.splice(i, 1);
-            }
+        let text = prompt("Escribe una cadena de texto");
+        const unfiltered_words = text.split(" ");
+        for(i = 0; i < unfiltered_words.length; i++){
+            unfiltered_words[i] = unfiltered_words[i].trim();
         }
         
-        
-        document.write("Número de palabras: " + palabras.length  + "<br>");
-        document.write("Primera palabra: " + palabras[0]  + "<br>");
-        document.write("Última palabra: " + palabras[palabras.length-1] + "<br>");
-        
+        const words_og = unfiltered_words.filter(checkSpace);
+        let words = words_og;
+        document.write("Array de palabras sin filtrar: " + "<br>");
+        allArray(unfiltered_words);
+        document.write("Orden de palabras normal: " + "<br>");
+        allArray(words);
+        document.write("Número de palabras: " + words.length  + "<br>");
+        document.write("Primera palabra: " + words[0]  + "<br>");
+        document.write("Última palabra: " + words[words.length-1] + "<br>");
+        document.write("Orden de palabras inverso: " + "<br>");
+        words.reverse();
+        allArray(words);
+        words.reverse();
+        document.write("Ordenado alfabéticamente: " + "<br>");
+        words.sort();
+        allArray(words);
+        document.write("Ordenado alfabéticamente inverso: " + "<br>");
+        words.reverse();
+        allArray(words);
 
 
-        allArray(palabras);
-        
+
         function allArray(a) {
             document.write("[");
             for(i = 0; i < a.length - 1; i++ ){
@@ -44,6 +42,10 @@
             }
             document.write( a[a.length - 1] + "]" + "<br>");
         }
+        function checkSpace(s) {
+            return s != "";
+        }
+        
     </script>
 </body>
 </html>
