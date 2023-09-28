@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Escribe un número");
+
+        alert("El número introducido es " + esParImpar(n));
+
+        function esParImpar(n){
+            let respuesta = "ERROR";
+            if(n % 2 == 0){
+                respuesta = "par";
+            }
+            else if(!isNaN(n)){
+                respuesta = "impar"
+            }
+            return respuesta;
+        }
+    </script>
+</body>
+</html>

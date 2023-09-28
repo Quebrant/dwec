@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej3</title>
+</head>
+<body>
+    <script>
+        let text = prompt("Escribe una cadena de texto");
+        const unfiltered_chars = text.split("");
+        for(i = 0; i < unfiltered_chars.length; i++){
+            unfiltered_chars[i] = unfiltered_chars[i].toLowerCase().trim();
+        }
+
+        allArray(unfiltered_chars);
+
+        const chars = unfiltered_chars.filter(checkSpace);
+        const chars_copy = structuredClone(chars);
+        chars_copy.reverse();
+
+        allArray(chars);
+        allArray(chars_copy);
+
+
+        let esPal = true;
+
+        for(i = 0; i <= chars.length; i++){
+            if(chars[i] != chars_copy[i]){
+                esPal = false;
+            }
+        }
+
+
+        if(esPal == true){
+            alert("Es palíndromo");
+        }
+        else{
+            alert("No es palíndromo");
+        }
+
+        function checkSpace(s) {
+            return s != "";
+        }
+        function allArray(a) {
+            document.write("[");
+            for(i = 0; i < a.length - 1; i++ ){
+                document.write(a[i] + ",");
+            }
+            document.write( a[a.length - 1] + "]" + "<br>");
+        }
+        
+    </script>
+</body>
+</html>

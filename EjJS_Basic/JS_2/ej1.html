@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1</title>
+</head>
+<body>
+    <script>
+        const text = prompt("Escribe una frase");
+        switch(checkCaps(text)){
+            case 1:
+                alert("El texto utiliza únicamente mayúsculas");
+                break;
+            case 0:
+                alert("El texto utiliza únicamente minúsculas");
+                break;
+            case -1:
+                alert("El texto utiliza mayúsculas y minúsculas");
+                break;
+            default:
+                alert("ERROR");
+        }
+
+        function checkCaps(s){
+            let option = -1; 
+            if(s === s.toUpperCase()){
+                option = 1;
+            }
+            if(s === s.toLowerCase()){
+                option = 0;
+            }
+            return option;
+        }
+    </script>
+</body>
+</html>
