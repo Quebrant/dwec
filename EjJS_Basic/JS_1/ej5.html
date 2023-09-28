@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej5</title>
+</head>
+<body>
+    <script>
+        const NIF_letras = ["T","R","W" ,"A" ,"G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H" ,"L" ,"C" ,"K" ,"E"]; 
+        let dni_n = prompt("Escribe el número dni");
+        let dni_l;
+        let resto = dni_n % 23;
+        if (resto >= 0 && resto < 23 && dni_n.length == 8){
+            dni_l = prompt("Escribe la letra del dni");
+            if(dni_l != NIF_letras[resto]){
+                alert("Letra no válida!");
+            }
+            else{
+                alert("El dni " + dni_n + dni_l + " es válido");
+            }
+        }
+        else{
+            alert("Número no válido!");
+        }
+
+    </script>
+</body>
+</html>
